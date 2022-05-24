@@ -36,7 +36,7 @@ namespace StudentManagementSystem
 
         public static List<Student> GetAllStudents() 
         { 
-            throw new NotImplementedException(); 
+             
         }
 
         public static void Update(Student s) 

@@ -40,7 +40,7 @@
             // LblFirstName
             // 
             this.LblFirstName.AutoSize = true;
-            this.LblFirstName.Location = new System.Drawing.Point(23, 25);
+            this.LblFirstName.Location = new System.Drawing.Point(45, 30);
             this.LblFirstName.Name = "LblFirstName";
             this.LblFirstName.Size = new System.Drawing.Size(67, 15);
             this.LblFirstName.TabIndex = 0;
@@ -49,7 +49,7 @@
             // LblLastName
             // 
             this.LblLastName.AutoSize = true;
-            this.LblLastName.Location = new System.Drawing.Point(22, 54);
+            this.LblLastName.Location = new System.Drawing.Point(44, 59);
             this.LblLastName.Name = "LblLastName";
             this.LblLastName.Size = new System.Drawing.Size(66, 15);
             this.LblLastName.TabIndex = 1;
@@ -58,7 +58,7 @@
             // LblDOB
             // 
             this.LblDOB.AutoSize = true;
-            this.LblDOB.Location = new System.Drawing.Point(12, 83);
+            this.LblDOB.Location = new System.Drawing.Point(34, 88);
             this.LblDOB.Name = "LblDOB";
             this.LblDOB.Size = new System.Drawing.Size(76, 15);
             this.LblDOB.TabIndex = 2;
@@ -66,28 +66,28 @@
             // 
             // TxtFirstName
             // 
-            this.TxtFirstName.Location = new System.Drawing.Point(93, 21);
+            this.TxtFirstName.Location = new System.Drawing.Point(115, 26);
             this.TxtFirstName.Name = "TxtFirstName";
             this.TxtFirstName.Size = new System.Drawing.Size(100, 23);
             this.TxtFirstName.TabIndex = 3;
             // 
             // TxtLastName
             // 
-            this.TxtLastName.Location = new System.Drawing.Point(93, 50);
+            this.TxtLastName.Location = new System.Drawing.Point(115, 55);
             this.TxtLastName.Name = "TxtLastName";
             this.TxtLastName.Size = new System.Drawing.Size(100, 23);
             this.TxtLastName.TabIndex = 4;
             // 
             // TxtDOB
             // 
-            this.TxtDOB.Location = new System.Drawing.Point(93, 79);
+            this.TxtDOB.Location = new System.Drawing.Point(115, 84);
             this.TxtDOB.Name = "TxtDOB";
             this.TxtDOB.Size = new System.Drawing.Size(100, 23);
             this.TxtDOB.TabIndex = 5;
             // 
             // BtnCreateStudent
             // 
-            this.BtnCreateStudent.Location = new System.Drawing.Point(40, 125);
+            this.BtnCreateStudent.Location = new System.Drawing.Point(62, 130);
             this.BtnCreateStudent.Name = "BtnCreateStudent";
             this.BtnCreateStudent.Size = new System.Drawing.Size(132, 23);
             this.BtnCreateStudent.TabIndex = 6;
@@ -99,7 +99,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(216, 181);
+            this.ClientSize = new System.Drawing.Size(262, 181);
             this.Controls.Add(this.BtnCreateStudent);
             this.Controls.Add(this.TxtDOB);
             this.Controls.Add(this.TxtLastName);
