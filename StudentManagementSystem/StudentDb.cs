@@ -18,9 +18,8 @@ namespace StudentManagementSystem
             insertCmd.Connection = con;
 
             // Parameterized query
-            insertCmd.CommandText = "Insert Into Student(StudentId, FName, LName, DateOfBirth)" +
-                "Values (@StudentId, @FName, @LName, @DateOfBirth)";
-            insertCmd.Parameters.AddWithValue("@StudentId", s.StudentId);
+            insertCmd.CommandText = "Insert Into Student( FName, LName, DateOfBirth)" +
+                "Values (@FName, @LName, @DateOfBirth)";
             insertCmd.Parameters.AddWithValue("@FName", s.FirstName);
             insertCmd.Parameters.AddWithValue("@LName", s.LastName);
             insertCmd.Parameters.AddWithValue("@DateOfBirth", s.DateOfBirth);
