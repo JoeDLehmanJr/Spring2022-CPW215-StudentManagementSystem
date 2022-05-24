@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.BtnOpenCreateForm = new System.Windows.Forms.Button();
+            this.LstStudents = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // BtnOpenCreateForm
@@ -41,14 +42,25 @@
             this.BtnOpenCreateForm.UseVisualStyleBackColor = true;
             this.BtnOpenCreateForm.Click += new System.EventHandler(this.BtnOpenCreateForm_Click);
             // 
+            // LstStudents
+            // 
+            this.LstStudents.FormattingEnabled = true;
+            this.LstStudents.ItemHeight = 15;
+            this.LstStudents.Location = new System.Drawing.Point(164, 129);
+            this.LstStudents.Name = "LstStudents";
+            this.LstStudents.Size = new System.Drawing.Size(229, 154);
+            this.LstStudents.TabIndex = 1;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.LstStudents);
             this.Controls.Add(this.BtnOpenCreateForm);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
         }
@@ -56,5 +68,6 @@
         #endregion
 
         private Button BtnOpenCreateForm;
+        private ListBox LstStudents;
     }
 }
