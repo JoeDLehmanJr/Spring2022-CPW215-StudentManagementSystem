@@ -28,20 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.BtnOpenCreateForm = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // BtnOpenCreateForm
+            // 
+            this.BtnOpenCreateForm.Location = new System.Drawing.Point(-4, 3);
+            this.BtnOpenCreateForm.Name = "BtnOpenCreateForm";
+            this.BtnOpenCreateForm.Size = new System.Drawing.Size(164, 23);
+            this.BtnOpenCreateForm.TabIndex = 0;
+            this.BtnOpenCreateForm.Text = "Open Create Student Form";
+            this.BtnOpenCreateForm.UseVisualStyleBackColor = true;
+            this.BtnOpenCreateForm.Click += new System.EventHandler(this.BtnOpenCreateForm_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.BtnOpenCreateForm);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private Button BtnOpenCreateForm;
     }
 }

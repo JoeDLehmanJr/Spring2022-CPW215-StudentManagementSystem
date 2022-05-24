@@ -7,9 +7,10 @@ namespace StudentManagementSystem
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void BtnOpenCreateForm_Click(object sender, EventArgs e)
         {
-            Student stu = new("Joe", "Lehman", new DateTime(1965, 5, 1));
+            FrmCreateStudentForm newStuForm = new FrmCreateStudentForm();
+            newStuForm.ShowDialog();
         }
     }
 }
