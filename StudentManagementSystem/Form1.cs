@@ -1,3 +1,4 @@
+#nullable disable
 namespace StudentManagementSystem
 {
     public partial class Form1 : Form
