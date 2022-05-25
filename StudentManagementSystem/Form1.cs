@@ -10,7 +10,7 @@ namespace StudentManagementSystem
 
         private void BtnOpenCreateForm_Click(object sender, EventArgs e)
         {
-            FrmCreateStudentForm newStuForm = new FrmCreateStudentForm();
+            FrmCreateStudentForm newStuForm = new();
             newStuForm.ShowDialog();
 
             PopulateStudentList();
