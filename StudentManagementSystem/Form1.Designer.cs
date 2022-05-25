@@ -50,6 +50,7 @@
             this.LstStudents.Name = "LstStudents";
             this.LstStudents.Size = new System.Drawing.Size(229, 154);
             this.LstStudents.TabIndex = 1;
+            this.LstStudents.SelectedIndexChanged += new System.EventHandler(this.LstStudents_SelectedIndexChanged);
             // 
             // Form1
             // 

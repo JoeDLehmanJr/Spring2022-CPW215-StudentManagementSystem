@@ -68,5 +68,10 @@ namespace StudentManagementSystem
 
             return (byte) (currentYear - yearBorn);
         }
+
+        public override string ToString()
+        {
+            return FullName;
+        }
     }
 }
