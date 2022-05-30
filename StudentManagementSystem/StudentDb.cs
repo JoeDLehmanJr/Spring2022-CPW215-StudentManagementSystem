@@ -84,14 +84,51 @@ namespace StudentManagementSystem
             throw new NotImplementedException(); 
         }
 
+        /// <summary>
+        /// Deletes a student
+        /// </summary>
+        /// <param name="s">The student to be deleted</param>
+        /// <exception cref="SqlException">Thrown for SQL problems</exception>
+        /// <exception cref="ArgumentException">Thrown if the student does not exist.</exception>
         public static void Delete(Student s) 
         { 
-            throw new NotImplementedException(); 
+            if (s.StudentId == 0)
+            {
+                throw new ArgumentException("The StudentId must be populated.");
+            }
+            Delete(s.StudentId); 
         }
 
+        /// <summary>
+        /// Deletes a student by the StudentId number
+        /// </summary>
+        /// <param name="id">The SWtudentId of the student to be deleted.</param>
+        /// <exception cref="SqlException">Thrown for SQL problems</exception>
+        /// <exception cref="ArgumentException">Thrown if the student does not exist.</exception>
         public static void Delete(int id)
         {
-            throw new NotImplementedException();
+            // Get Connection
+            using SqlConnection con = GetDatabaseConnection();
+
+            // Prepare the query
+            SqlCommand deleteCmd = new();
+            deleteCmd.Connection = con;
+            deleteCmd.CommandText = "Delete From Student Where StudentId = @id";
+
+            // Setup parameters
+            deleteCmd.Parameters.AddWithValue("@id", id);
+
+            // Open database connection
+            con.Open();
+
+            // Execute the query
+            int rows = deleteCmd.ExecuteNonQuery();
+
+            // Make sure the query was successful in its deletion
+            if (rows == 0)
+            {
+                throw new ArgumentException("A student with that id does not exist.");
+            } 
         }
 
         public static Student GetStudent(int id)
