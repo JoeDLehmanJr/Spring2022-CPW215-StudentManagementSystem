@@ -4,7 +4,7 @@ namespace StudentManagementSystem
     /// <summary>
     /// Represents a college student
     /// </summary>
-    class Student
+    public class Student
     {
         // Fully implemented C# property
         private int _studentId;

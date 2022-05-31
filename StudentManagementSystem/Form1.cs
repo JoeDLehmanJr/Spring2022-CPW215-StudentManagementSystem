@@ -69,7 +69,15 @@ namespace StudentManagementSystem
 
         private void BtnUpdateStudent_Click(object sender, EventArgs e)
         {
-            FrmCreateOrUpdateStudentForm updateForm = new FrmCreateOrUpdateStudentForm();
+            if (LstStudents.SelectedIndex == -1)
+            {
+                MessageBox.Show("A student must be selected.");
+                return;
+            }
+            Student selectedStu = (Student)LstStudents.SelectedItem;
+            FrmCreateOrUpdateStudentForm updateForm = new FrmCreateOrUpdateStudentForm(selectedStu);
+            updateForm.ShowDialog();
+            PopulateStudentList();
         }
     }
 }

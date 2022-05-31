@@ -8,9 +8,9 @@ namespace StudentManagementSystem
         /// Adds a student to the database
         /// </summary>
         /// <param name="s">The student to be added</param>
-        public static void add(Student s)
+        public static void Add(Student s)
         {
-            SqlConnection con = GetDatabaseConnection();
+            using SqlConnection con = GetDatabaseConnection();
 
             // Prepare insert statement
             SqlCommand insertCmd = new();
@@ -28,9 +28,6 @@ namespace StudentManagementSystem
 
             // Execute insert query
             insertCmd.ExecuteNonQuery();
-
-            // Close connection to the database
-            con.Close();
         }
 
         private static SqlConnection GetDatabaseConnection()
@@ -47,7 +44,7 @@ namespace StudentManagementSystem
         public static List<Student> GetAllStudents() 
         { 
              // Get Connection
-             SqlConnection con = GetDatabaseConnection();
+             using SqlConnection con = GetDatabaseConnection();
 
             // Prepare the query
             SqlCommand selCmd = new();
@@ -72,16 +69,37 @@ namespace StudentManagementSystem
                 students.Add(tempStu);
 
             }
-            // Close connection
-            con.Close();
-
             // Return list of students
             return students;
         }
 
-        public static void Update(Student s) 
-        { 
-            throw new NotImplementedException(); 
+        /// <summary>
+        /// Updates a student
+        /// </summary>
+        /// <param name="s">The student to be updated</param>
+        /// <exception cref="SqlException">Thrown for SQL problems</exception>
+        public static void Update(Student s)
+        {
+            // Get Connection
+            using SqlConnection con = GetDatabaseConnection();
+            
+            // Prepare the query
+            SqlCommand updateCmd = new();
+            updateCmd.Connection = con;
+
+            // Parameterized query
+            updateCmd.CommandText = "Update Student Set FName = @FName, " +
+                "LName = @LName, DateOfBirth = @DateOfBirth Where StudentId = @id";
+            updateCmd.Parameters.AddWithValue("@FName", s.FirstName);
+            updateCmd.Parameters.AddWithValue("@LName", s.LastName);
+            updateCmd.Parameters.AddWithValue("@DateOfBirth", s.DateOfBirth);
+            updateCmd.Parameters.AddWithValue("@id", s.StudentId);
+
+            // Open database connection
+            con.Open();
+
+            // Execute the non-query
+            updateCmd.ExecuteNonQuery();
         }
 
         /// <summary>
@@ -121,7 +139,7 @@ namespace StudentManagementSystem
             // Open database connection
             con.Open();
 
-            // Execute the query
+            // Execute the non-query
             int rows = deleteCmd.ExecuteNonQuery();
 
             // Make sure the query was successful in its deletion
@@ -129,11 +147,6 @@ namespace StudentManagementSystem
             {
                 throw new ArgumentException("A student with that id does not exist.");
             } 
-        }
-
-        public static Student GetStudent(int id)
-        {
-            throw new NotImplementedException();
         }
     }
 }
